@@ -16,4 +16,9 @@ git push heroku master
 heroku open
 ```
 
+### Delete heroku app
+```sh
+heroku apps:destroy --app $APP_NAME
+```
+
 [reference](https://github.com/mars/create-react-app-buildpack)
