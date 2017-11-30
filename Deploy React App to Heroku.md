@@ -4,6 +4,11 @@ heroku create $APP_NAME --buildpack https://github.com/mars/create-react-app-bui
 ```
 Replace $APP_NAME with a name for your unique app.
 
+### Set buildpacks for existing app
+```sh
+heroku buildpacks:set https://github.com/some/buildpack.git -a $APP_NAME
+```
+
 ### Deploy
 
 ```sh
