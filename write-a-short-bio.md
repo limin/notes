@@ -11,5 +11,8 @@ State any notable achievements or awards earned. Keep the information relevant t
 Conclude the bio by briefly stating any current or upcoming projects, such as a new book coming out. The last sentence should state where you reside, such as "Jane Smith lives in Orlando, Florida." Adjust the bio as necessary when your education, expertise or achievements change to reflect the most current information.
 
 ### references
-[http://smallbusiness.chron.com/write-short-bio-yourself-57289.html](http://smallbusiness.chron.com/write-short-bio-yourself-57289.html)
-[https://penandthepad.com/write-short-biography-4780928.html](https://penandthepad.com/write-short-biography-4780928.html)
+- [http://smallbusiness.chron.com/write-short-bio-yourself-57289.html](http://smallbusiness.chron.com/write-short-bio-yourself-57289.html)
+- [https://penandthepad.com/write-short-biography-4780928.html](https://penandthepad.com/write-short-biography-4780928.html)
+
+### example of my bio for udacity
+Min Li is a software developer. He has been working as a software engineer since 1997. He graduated from Huazhong University of Science and Technology. He've completed React Nanodegree program. He lives in Vancouver, Canada.
