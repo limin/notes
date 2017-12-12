@@ -222,6 +222,52 @@ var removeDuplicates = function(nums) {
 };
 ```
 
+### 28. Implement strStr() 
+ Implement strStr().
+
+Return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
+
+Example 1:
+```
+Input: haystack = "hello", needle = "ll"
+Output: 2
+```
+Example 2:
+```
+Input: haystack = "aaaaa", needle = "bba"
+Output: -1
+```
+
+Answer:
+```javascript
+/**
+ * @param {string} haystack
+ * @param {string} needle
+ * @return {number}
+ */
+var strStr = function(haystack, needle) {
+    if(haystack === null || needle === null){
+        return -1
+    }
+    
+    for(let i=0;i<haystack.length;i++){
+        if(haystack.length-i<needle.length){
+            return -1
+        }
+        let matched=true
+        for(let j=0;j<needle.length;j++){
+            if(needle.charAt(j)!==haystack.charAt(j+i)){
+                matched=false
+            }
+        }
+        if(matched){
+            return i
+        }
+    }
+    return needle.length===0?0:-1
+};
+```
+
 ### [38. Count and Say](https://leetcode.com/problems/count-and-say/description/)
 The count-and-say sequence is the sequence of integers with the first five terms as following:
 ```
