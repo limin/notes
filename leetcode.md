@@ -222,7 +222,7 @@ var removeDuplicates = function(nums) {
 };
 ```
 
-### 28. Implement strStr() 
+### [28. Implement strStr()](https://leetcode.com/problems/implement-strstr/description/)
  Implement strStr().
 
 Return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
