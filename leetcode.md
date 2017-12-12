@@ -74,6 +74,40 @@ var reverse = function(x) {
 };
 ```
 
+### [14. Longest Common Prefix ](https://leetcode.com/problems/longest-common-prefix/description/)
+Write a function to find the longest common prefix string amongst an array of strings. 
+
+Answer:
+```javascript
+/**
+ * @param {string[]} strs
+ * @return {string}
+ */
+var longestCommonPrefix = function(strs) {
+    if(strs.length==0)
+        return ""
+    let i=-1,completed=false
+    while(!completed){
+        let c=null
+        i++
+        for(let str of strs){
+            if(i>=str.length){
+                completed=true
+                break;
+            }
+            if(c===null){
+                c=str.charAt(i)
+            }else if(c!==str.charAt(i)){
+                completed=true
+                break;
+            }
+        }
+    }
+    return strs[0].substring(0,i)
+};
+```
+
+
 ### [38. Count and Say](https://leetcode.com/problems/count-and-say/description/)
 The count-and-say sequence is the sequence of integers with the first five terms as following:
 ```
