@@ -29,6 +29,51 @@ var twoSum = function(nums, target) {
 };
 ```
 
+### [7. Reverse Integer ](https://leetcode.com/problems/reverse-integer/description/)
+Given a 32-bit signed integer, reverse digits of an integer.
+
+Example 1:
+```
+Input: 123
+Output:  321
+```
+Example 2:
+```
+Input: -123
+Output: -321
+```
+Example 3:
+```
+Input: 120
+Output: 21
+```
+Note:
+Assume we are dealing with an environment which could only hold integers within the 32-bit signed integer range. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows. 
+
+Answer:
+```javascript
+/**
+ * @param {number} x
+ * @return {number}
+ */
+var reverse = function(x) {
+    if(x===0) return 0
+    const MAX=Math.pow(2,31)
+    const sign=x>0?1:-1    
+    let result=0,digit=0
+    x=sign*x
+    while(x>0){
+        digit=x % 10
+        if(MAX-digit<result*10){
+            return 0   
+        }
+        result=result*10+digit
+        x=Math.floor(x/10)
+    }
+    return result==MAX&&sign==-1?0:sign*result
+};
+```
+
 ### [38. Count and Say](https://leetcode.com/problems/count-and-say/description/)
 The count-and-say sequence is the sequence of integers with the first five terms as following:
 ```
