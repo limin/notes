@@ -107,6 +107,44 @@ var longestCommonPrefix = function(strs) {
 };
 ```
 
+### [20. Valid Parentheses ](https://leetcode.com/problems/valid-parentheses/description/)
+Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+The brackets must close in the correct order, "()" and "()[]{}" are all valid but "(]" and "([)]" are not.
+
+Answer:
+```javascript
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isValid = function(s) {
+    let pairs=[] 
+    for(let i=0;i<s.length;i++){ //s="([])", i=1
+        switch(s.charAt(i)){ //]
+            case '(':
+                pairs.push(')')
+                break
+            case '{':
+                pairs.push('}')
+                break
+            case '[':
+                pairs.push(']') //pairs=]
+                break
+            case ')':
+            case '}':
+            case ']':
+                if(pairs.length>0 && pairs.pop()===s.charAt(i)){
+                    // do nothing
+                }else{
+                    return false
+                }
+        }
+    }
+    return pairs.length===0
+};
+```
+
 
 ### [38. Count and Say](https://leetcode.com/problems/count-and-say/description/)
 The count-and-say sequence is the sequence of integers with the first five terms as following:
