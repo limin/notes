@@ -145,6 +145,52 @@ var isValid = function(s) {
 };
 ```
 
+### [ 21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/description/)
+Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.
+
+Example:
+```
+Input: 1->2->4, 1->3->4
+Output: 1->1->2->3->4->4
+```
+Answer:
+```javascript
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+/**
+ * @param {ListNode} l1
+ * @param {ListNode} l2
+ * @return {ListNode}
+ */
+var mergeTwoLists = function(l1, l2) {
+    const mergedList=new ListNode(null)
+    let currentNode=mergedList
+    while(l1!==null || l2!==null){ //4, >3->4
+        if(l1===null){
+            currentNode.next=l2
+            l2=l2.next
+        }else if(l2===null){
+            currentNode.next=l1
+            l1=l1.next
+        }else{
+            if(l1.val<l2.val){
+                currentNode.next=l1 //null->1->1->2
+                l1=l1.next //4
+            }else{
+                currentNode.next=l2 //null->1
+                l2=l2.next //1->2->4,3->4
+            }
+        }
+        currentNode=currentNode.next //1->1->2
+    }
+    return mergedList.next
+};
+```
 
 ### [38. Count and Say](https://leetcode.com/problems/count-and-say/description/)
 The count-and-say sequence is the sequence of integers with the first five terms as following:
