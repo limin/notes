@@ -10,7 +10,7 @@ Given nums = [2, 7, 11, 15], target = 9,
 Because nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1].
 ```
-Asnwer:
+#### Asnwer
 ```javascript
 /**
  * @param {number[]} nums
@@ -50,7 +50,7 @@ Output: 21
 Note:
 Assume we are dealing with an environment which could only hold integers within the 32-bit signed integer range. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows. 
 
-Answer:
+#### Answer
 ```javascript
 /**
  * @param {number} x
@@ -77,7 +77,7 @@ var reverse = function(x) {
 ### [14. Longest Common Prefix ](https://leetcode.com/problems/longest-common-prefix/description/)
 Write a function to find the longest common prefix string amongst an array of strings. 
 
-Answer:
+#### Answer
 ```javascript
 /**
  * @param {string[]} strs
@@ -112,7 +112,7 @@ Given a string containing just the characters '(', ')', '{', '}', '[' and ']', d
 
 The brackets must close in the correct order, "()" and "()[]{}" are all valid but "(]" and "([)]" are not.
 
-Answer:
+#### Answer
 ```javascript
 /**
  * @param {string} s
@@ -153,7 +153,7 @@ Example:
 Input: 1->2->4, 1->3->4
 Output: 1->1->2->3->4->4
 ```
-Answer:
+#### Answer
 ```javascript
 /**
  * Definition for singly-linked list.
@@ -204,7 +204,7 @@ Given nums = [1,1,2],
 Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively.
 It doesn't matter what you leave beyond the new length.
 
-Answer:
+#### Answer
 ```javascript
 /**
  * @param {number[]} nums
@@ -238,7 +238,7 @@ Input: haystack = "aaaaa", needle = "bba"
 Output: -1
 ```
 
-Answer:
+#### Answer
 ```javascript
 /**
  * @param {string} haystack
@@ -297,7 +297,7 @@ Input: 4
 Output: "1211"
 ```
 
-Answer:
+#### Answer
 ```javascript
 /**
  * @param {number} n
@@ -335,7 +335,7 @@ var countAndSay = function(n) {
 For example, given the array [-2,1,-3,4,-1,2,1,-5,4],
 the contiguous subarray [4,-1,2,1] has the largest sum = 6. 
 
-Answer:
+#### Answer
 ```javascript
 /**
  * @param {number[]} nums
@@ -365,7 +365,7 @@ You may assume the integer do not contain any leading zero, except the number 0 
 
 The digits are stored such that the most significant digit is at the head of the list.
 
-#### Answer:
+#### Answer
 ```javascript
 /**
  * @param {number[]} digits
