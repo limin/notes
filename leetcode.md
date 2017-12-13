@@ -386,3 +386,44 @@ var plusOne = function(digits) {
     return i>=0?digits:[1,...digits]
 };
 ```
+
+### [69. Sqrt(x)](https://leetcode.com/problems/sqrtx/description/)
+Implement int sqrt(int x).
+
+Compute and return the square root of x.
+
+x is guaranteed to be a non-negative integer.
+
+Example 1:
+```
+Input: 4
+Output: 2
+```
+Example 2:
+```
+Input: 8
+Output: 2
+```
+Explanation: The square root of 8 is 2.82842..., and since we want to return an integer, the decimal part will be truncated
+
+#### Answer
+```javascript
+/**
+ * @param {number} x
+ * @return {number}
+ */
+var mySqrt = function(x) {
+    //r*r=x=>r-x/r=0=>r-x/r=delta=>r*r-x=d*r
+    if(x===0) return 0
+    let r=1
+    while(true){
+        let d=r-x/r
+        if(d>=2 || d<=-2){
+            r-=d/2 
+        }else{
+            r=Math.floor(r)
+            return r*r>x?r-1:r
+        }
+    }
+};
+```
