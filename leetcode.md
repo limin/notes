@@ -329,7 +329,7 @@ var countAndSay = function(n) {
 };
 ```
 
-### [53. Maximum Subarray ?](https://leetcode.com/problems/maximum-subarray/description/)
+### [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/description/)
  Find the contiguous subarray within an array (containing at least one number) which has the largest sum.
 
 For example, given the array [-2,1,-3,4,-1,2,1,-5,4],
@@ -358,7 +358,7 @@ var maxSubArray = function(nums) {
 };
 ```
 
-### 66. Plus One 
+### [66. Plus One] (https://leetcode.com/problems/plus-one/description/)
 Given a non-negative integer represented as a non-empty array of digits, plus one to the integer.
 
 You may assume the integer do not contain any leading zero, except the number 0 itself.
