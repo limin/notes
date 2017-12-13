@@ -357,3 +357,32 @@ var maxSubArray = function(nums) {
     return max
 };
 ```
+
+### 66. Plus One 
+Given a non-negative integer represented as a non-empty array of digits, plus one to the integer.
+
+You may assume the integer do not contain any leading zero, except the number 0 itself.
+
+The digits are stored such that the most significant digit is at the head of the list.
+
+#### Answer:
+```javascript
+/**
+ * @param {number[]} digits
+ * @return {number[]}
+ */
+var plusOne = function(digits) {
+    let addend=1,i=digits.length-1 //augend index
+    while(addend>0 && i>=0){
+        let result=digits[i]+addend
+        if(result==10){
+            digits[i--]=0            
+        }else{
+            digits[i]=result
+            addend=0
+        }
+    }
+    
+    return i>=0?digits:[1,...digits]
+};
+```
