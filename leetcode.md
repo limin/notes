@@ -336,4 +336,24 @@ For example, given the array [-2,1,-3,4,-1,2,1,-5,4],
 the contiguous subarray [4,-1,2,1] has the largest sum = 6. 
 
 Answer:
-TODO
+```javascript
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var maxSubArray = function(nums) {
+    if(nums.length===0){
+        return 0
+    }
+    //dynamic programming.
+    //f(i)=f(i-1)>0?f(i-1)+nums[i]:nums[i]
+    //f(0)=nums(0)
+    //maxi: the max sum of the sub array end with index i
+    let max=nums[0], maxi=nums[0]
+    for(let i=1;i<nums.length;i++){
+        maxi=maxi>0?maxi+nums[i]:nums[i]
+        if(maxi>max){max=maxi}
+    }
+    return max
+};
+```
