@@ -511,3 +511,63 @@ var merge = function(nums1, m, nums2, n) {
     }    
 };
 ```
+
+### [101. Symmetric Tree](https://leetcode.com/problems/symmetric-tree/description/)
+Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
+
+For example, this binary tree [1,2,2,3,4,4,3] is symmetric: 
+```
+    1
+   / \
+  2   2
+ / \ / \
+3  4 4  3
+```
+But the following [1,2,2,null,3,null,3] is not:
+```
+    1
+   / \
+  2   2
+   \   \
+   3    3
+```
+
+#### Answer
+Iteration
+```javascript
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {boolean}
+ */
+var isSymmetric = function(root) {
+    const nodes=[root]
+    while(nodes.length>0){
+        const len=nodes.length
+        for(let i=0;i<len/2;i++){
+            let pair=[nodes[i],nodes[len-1-i]]
+            if((pair[0]===null && pair[1]!==null)||(pair[0]!==null && pair[1]===null)){
+                return false
+            }
+            if((pair[0]!==null && pair[1]!==null) && pair[0].val!==pair[1].val){
+                return false
+            }
+        }        
+        for(let i=len;i>0;i--){
+            const node=nodes.shift()
+            if(node!=null){
+                nodes.push(node.left)
+                nodes.push(node.right)
+            }
+
+        }
+    }
+    return true
+};
+```
