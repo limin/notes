@@ -170,23 +170,23 @@ Output: 1->1->2->3->4->4
 var mergeTwoLists = function(l1, l2) {
     const mergedList=new ListNode(null)
     let currentNode=mergedList
-    while(l1!==null || l2!==null){ //4, >3->4
+    while(l1!==null || l2!==null){ 
         if(l1===null){
             currentNode.next=l2
-            l2=l2.next
+            break
         }else if(l2===null){
             currentNode.next=l1
-            l1=l1.next
+            break
         }else{
             if(l1.val<l2.val){
-                currentNode.next=l1 //null->1->1->2
-                l1=l1.next //4
+                currentNode.next=l1 
+                l1=l1.next 
             }else{
-                currentNode.next=l2 //null->1
-                l2=l2.next //1->2->4,3->4
+                currentNode.next=l2 
+                l2=l2.next 
             }
         }
-        currentNode=currentNode.next //1->1->2
+        currentNode=currentNode.next 
     }
     return mergedList.next
 };
