@@ -533,7 +533,7 @@ But the following [1,2,2,null,3,null,3] is not:
 ```
 
 #### Answer
-Iteration
+Iterative
 ```javascript
 /**
  * Definition for a binary tree node.
@@ -569,5 +569,37 @@ var isSymmetric = function(root) {
         }
     }
     return true
+};
+```
+
+recursive
+```javascript
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {boolean}
+ */
+var isSymmetric = function(root) {
+    const isSymmetricPair=(left,right)=>{
+        if(left===null && right===null){
+            return true
+        }else if(left===null||right===null){
+            return false
+        }else if(left.val!==right.val){
+            return false
+        }else{
+            return isSymmetricPair(left.left,right.right)&&isSymmetricPair(left.right,right.left)
+        }
+    }
+    if(root===null){
+        return true
+    }
+    return isSymmetricPair(root.left,root.right)
 };
 ```
