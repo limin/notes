@@ -646,6 +646,7 @@ One possible answer is: [0,-3,9,-10,null,5], which represents the following heig
 ```
 
 #### Answer
+```javascript
 /**
  * Definition for a binary tree node.
  * function TreeNode(val) {
@@ -671,3 +672,4 @@ var sortedArrayToBST = function(nums) {
     }    
     return nums.length===0?null:sortedSubArrayToBST(0,nums.length-1,nums)
 };
+```
