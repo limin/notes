@@ -815,3 +815,25 @@ var isPalindrome = function(s) {
     return true
 };
 ```
+
+### 136. Single Number
+Given an array of integers, every element appears twice except for one. Find that single one.
+
+Note:
+Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
+
+#### Answer
+```javascript
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var singleNumber = function(nums) {
+    if(nums.length===0) throw "Invalid argument"
+    let single=nums[0]
+    for(let i=1;i<nums.length;i++){
+        single=single ^ nums[i]
+    }
+    return single
+};
+```
