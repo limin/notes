@@ -673,3 +673,40 @@ var sortedArrayToBST = function(nums) {
     return nums.length===0?null:sortedSubArrayToBST(0,nums.length-1,nums)
 };
 ```
+### [118. Pascal's Triangle](https://leetcode.com/problems/pascals-triangle/description/)
+Given numRows, generate the first numRows of Pascal's triangle.
+
+For example, given numRows = 5,
+Return
+```
+[
+     [1],
+    [1,1],
+   [1,2,1],
+  [1,3,3,1],
+ [1,4,6,4,1]
+]
+```
+#### Answer
+```javascript
+/**
+ * @param {number} numRows
+ * @return {number[][]}
+ */
+var generate = function(numRows) {
+    //dynamic programming
+    //fn=g(f(n-1))
+    if(numRows<1) return []
+    const triangle=[[1]]
+    for(let i=1;i<numRows;i++){
+        const lastRow=triangle[triangle.length-1]
+        const newRow=[1]
+        for(let j=0;j<lastRow.length-1;j++){
+            newRow.push(lastRow[j]+lastRow[j+1])
+        }
+        newRow.push(1)
+        triangle.push(newRow)
+    }
+    return triangle
+};
+```
