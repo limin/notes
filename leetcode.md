@@ -893,3 +893,38 @@ var fizzBuzz = function(n) {
     return output
 };
 ```
+### [387. First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string/description/)
+Given a string, find the first non-repeating character in it and return it's index. If it doesn't exist, return -1.
+
+Examples:
+```
+s = "leetcode"
+return 0.
+
+s = "loveleetcode",
+return 2.
+```
+Note: You may assume the string contain only lowercase letters.
+
+#### Answer
+```javascript
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var firstUniqChar = function(s) {
+    if(s===null || s.length===0) return -1
+    const counters=[], a='a'.charCodeAt(0),z='z'.charCodeAt(0)
+    for(let i=0;i<=z-a;i++){
+        counters[i]=0
+    }
+    for(let i=0;i<s.length;i++){
+        counters[s.charCodeAt(i)-a]++
+    }
+    for(let i=0;i<s.length;i++){
+        if(counters[s.charCodeAt(i)-a]===1) return i
+    }
+    return -1
+};
+```
+
