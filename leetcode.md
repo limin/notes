@@ -838,6 +838,38 @@ var singleNumber = function(nums) {
 };
 ```
 
+### [283. Move Zeroes](https://leetcode.com/problems/move-zeroes/description/)
+Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+
+For example, given nums = [0, 1, 0, 3, 12], after calling your function, nums should be [1, 3, 12, 0, 0].
+
+Note:
+You must do this in-place without making a copy of the array.
+Minimize the total number of operations.
+
+#### Answer
+```javascript
+/**
+ * @param {number[]} nums
+ * @return {void} Do not return anything, modify nums in-place instead.
+ */
+var moveZeroes = function(nums) {
+    let len=0
+    for(let i=0;i<nums.length;i++){
+        if(len>0 && nums[i]!==0){
+            //swap
+            nums[i-len]=nums[i]
+            nums[i]=0
+        }else if(nums[i]===0){
+            len++
+        }else{
+            //len===0 && nums[i]!==0
+            //do nothing
+        }
+    }
+};
+```
+
 ### [344. Reverse String](https://leetcode.com/problems/reverse-string/description/)
 Write a function that takes a string as input and returns the string reversed.
 
