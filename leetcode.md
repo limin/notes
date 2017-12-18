@@ -866,6 +866,46 @@ var missingNumber = function(nums) {
     return (len+1)*len/2-sum    
 };
 ```
+
+### [242. Valid Anagram](https://leetcode.com/problems/valid-anagram/description/) 
+Given two strings s and t, write a function to determine if t is an anagram of s.
+
+For example,
+s = "anagram", t = "nagaram", return true.
+s = "rat", t = "car", return false.
+
+Note:
+
+You may assume the string contains only lowercase alphabets.
+
+Follow up:
+
+What if the inputs contain unicode characters? How would you adapt your solution to such case?
+
+#### Answer
+```javascript
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var isAnagram = function(s, t) {
+    if(s===null || t===null) return false
+    if(s.length!==t.length) return false
+    const counter=[], a='a'.charCodeAt(0),z='z'.charCodeAt(0)
+    for(let i=0;i<=z-a;i++){
+        counter[i]=0
+    }
+    for(let i=0;i<s.length;i++){
+        counter[s.charCodeAt(i)-a]++
+    }
+    for(let i=0;i<t.length;i++){
+        counter[t.charCodeAt(i)-a]--
+        if(counter[t.charCodeAt(i)-a]<0) return false
+    }
+    return true
+};
+```
 ### [283. Move Zeroes](https://leetcode.com/problems/move-zeroes/description/)
 Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.
 
