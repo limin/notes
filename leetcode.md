@@ -837,6 +837,83 @@ var singleNumber = function(nums) {
     return single
 };
 ```
+### [350. Intersection of Two Arrays II](https://leetcode.com/problems/intersection-of-two-arrays-ii/description/)
+Given two arrays, write a function to compute their intersection.
+
+Example:
+Given nums1 = [1, 2, 2, 1], nums2 = [2, 2], return [2, 2].
+
+Note:
+Each element in the result should appear as many times as it shows in both arrays.
+The result can be in any order.
+Follow up:
+What if the given array is already sorted? How would you optimize your algorithm?
+What if nums1's size is small compared to nums2's size? Which algorithm is better?
+What if elements of nums2 are stored on disk, and the memory is limited such that you cannot load all elements into the memory at once?
+
+#### Answer
+```javascript
+/**
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number[]}
+ */
+var intersect = function(nums1, nums2) {
+    const map=new Map()
+    for(let i=0;i<nums1.length;i++){
+        if(map.has(nums1[i])){
+            map.set(nums1[i],map.get(nums1[i])+1)
+        }else{
+            map.set(nums1[i],1)
+        }        
+    }        
+
+    const nums=[]
+    for(let i=0;i<nums2.length;i++){
+        if(map.has(nums2[i])&&map.get(nums2[i])>0){
+            nums.push(nums2[i])
+            map.set(nums2[i],map.get(nums2[i])-1)
+        }
+    }
+    return nums
+};
+```
+
+
+### [387. First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string/description/)
+Given a string, find the first non-repeating character in it and return it's index. If it doesn't exist, return -1.
+
+Examples:
+```
+s = "leetcode"
+return 0.
+
+s = "loveleetcode",
+return 2.
+```
+Note: You may assume the string contain only lowercase letters.
+
+#### Answer
+```javascript
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var firstUniqChar = function(s) {
+    if(s===null || s.length===0) return -1
+    const counters=[], a='a'.charCodeAt(0),z='z'.charCodeAt(0)
+    for(let i=0;i<=z-a;i++){
+        counters[i]=0
+    }
+    for(let i=0;i<s.length;i++){
+        counters[s.charCodeAt(i)-a]++
+    }
+    for(let i=0;i<s.length;i++){
+        if(counters[s.charCodeAt(i)-a]===1) return i
+    }
+    return -1
+};
+```
 
 ### [412. Fizz Buzz](https://leetcode.com/problems/fizz-buzz/description/)
 Write a program that outputs the string representation of numbers from 1 to n.
@@ -893,38 +970,3 @@ var fizzBuzz = function(n) {
     return output
 };
 ```
-### [387. First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string/description/)
-Given a string, find the first non-repeating character in it and return it's index. If it doesn't exist, return -1.
-
-Examples:
-```
-s = "leetcode"
-return 0.
-
-s = "loveleetcode",
-return 2.
-```
-Note: You may assume the string contain only lowercase letters.
-
-#### Answer
-```javascript
-/**
- * @param {string} s
- * @return {number}
- */
-var firstUniqChar = function(s) {
-    if(s===null || s.length===0) return -1
-    const counters=[], a='a'.charCodeAt(0),z='z'.charCodeAt(0)
-    for(let i=0;i<=z-a;i++){
-        counters[i]=0
-    }
-    for(let i=0;i<s.length;i++){
-        counters[s.charCodeAt(i)-a]++
-    }
-    for(let i=0;i<s.length;i++){
-        if(counters[s.charCodeAt(i)-a]===1) return i
-    }
-    return -1
-};
-```
-
