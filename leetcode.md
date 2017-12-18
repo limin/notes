@@ -837,6 +837,29 @@ var singleNumber = function(nums) {
     return single
 };
 ```
+
+### [344. Reverse String](https://leetcode.com/problems/reverse-string/description/)
+Write a function that takes a string as input and returns the string reversed.
+
+Example:
+Given s = "hello", return "olleh".
+
+#### Answer
+```javascript
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var reverseString = function(s) {
+    if(s===null || s.length<=1) return s
+    let rs=""
+    for(let i=s.length-1;i>=0;i--){
+        rs+=s.charAt(i)
+    }
+    return rs
+};
+```
+
 ### [350. Intersection of Two Arrays II](https://leetcode.com/problems/intersection-of-two-arrays-ii/description/)
 Given two arrays, write a function to compute their intersection.
 
