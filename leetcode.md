@@ -837,7 +837,35 @@ var singleNumber = function(nums) {
     return single
 };
 ```
+### [268. Missing Number](https://leetcode.com/problems/missing-number/description/)
+Given an array containing n distinct numbers taken from 0, 1, 2, ..., n, find the one that is missing from the array.
 
+Example 1
+```
+Input: [3,0,1]
+Output: 2
+Example 2
+```
+```
+Input: [9,6,4,2,3,5,7,0,1]
+Output: 8
+```
+
+#### Answer
+```javascript
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var missingNumber = function(nums) {
+    let len=nums.length
+    let sum=0    
+    for(let i=0;i<nums.length;i++){
+        sum+=nums[i]
+    }
+    return (len+1)*len/2-sum    
+};
+```
 ### [283. Move Zeroes](https://leetcode.com/problems/move-zeroes/description/)
 Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.
 
