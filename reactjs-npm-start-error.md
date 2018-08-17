@@ -36,3 +36,4 @@ $ rm -fr node_modules/
 $ npm install
 
 ```
+The issue was solved after I had closed Atom application or restarted my ubuntu. maybe caused by limited resources.
