@@ -37,3 +37,8 @@ $ npm install
 
 ```
 The issue was solved after I had closed Atom application or restarted my ubuntu. maybe caused by limited resources.
+
+Increase the fs.inotify.max_user_watches to solve the issue
+```
+　　echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+```
