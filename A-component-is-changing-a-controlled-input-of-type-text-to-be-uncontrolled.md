@@ -1,4 +1,4 @@
-uuuu
+oooo8
  A component is changing a controlled input of type text to be uncontrolled
  
  
